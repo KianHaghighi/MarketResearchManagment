@@ -13,6 +13,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// handle the /MarketMap route
+app.MapControllerRoute(
+    name: "marketmap",
+    pattern: "MarketMap",
+    defaults: new { controller = "Home", action = "MarketMap" }
+);
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
