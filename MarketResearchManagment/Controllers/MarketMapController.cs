@@ -8,5 +8,14 @@ namespace MarketResearchManagment.Controllers
         {
             return View();
         }
+        
+        [HttpPost]
+        public ActionResult AnalyzeMarket(string marketName)
+        {
+            ViewBag.MarketName = marketName;
+            return View();
+        }
     }
 }
+
+
