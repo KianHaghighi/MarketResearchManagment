@@ -1,14 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@using (Html.BeginForm("AnalyzeMarket", "MarketMapController", FormMethod.Post))
+﻿@model IEnumerable<MarketResearchManagment.Models.MarketMap>
+
+<h2>Market Maps</h2>
+
+@foreach (var map in Model)
 {
-    <label for="marketName">Enter the market you want to analyze:</label>
-    <input type="text" id="marketName" name="marketName" required />
+    <div>
+        <h3>@map.Name</h3>
+        <p>@map.Description</p>
 
-    <input type="submit" value="Analyze" />
-
-
+        <!-- Assuming you have images stored in a folder named 'MarketMaps' in your 'Content' directory -->
+        <img src="@Url.Content(map.ImageUrl)" alt="Map Image" style="width:100%;max-width:600px;" />
+    </div>
 }
+
