@@ -1,0 +1,12 @@
+﻿@{
+    Layout = null; // Or your layout page
+}
+
+<h2>Add Your Own Map</h2>
+
+@using (Html.BeginForm("UploadMap", "MarketMap", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="fileUpload">Choose an image to upload:</label>
+    <input type="file" name="fileUpload" required />
+    <input type="submit" value="Upload Map" />
+}
