@@ -36,7 +36,6 @@ namespace MarketResearchManagment.Controllers
         }
 
         [HttpPost]
-        [HttpPost]
         public ActionResult UploadMap(IFormFile fileUpload)
         {
             if (fileUpload != null && fileUpload.Length > 0)
@@ -57,7 +56,7 @@ namespace MarketResearchManagment.Controllers
                 }
 
                 // Redirect to a confirmation page or back to the main map page
-                return RedirectToAction("Index"); // Assuming 'Index' is your main view showing all maps
+                return RedirectToAction("Index"); 
             }
 
             // Return the same view if no file was selected
