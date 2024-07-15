@@ -62,7 +62,10 @@ namespace MarketResearchManagment.Controllers
             // Return the same view if no file was selected
             return View();
         }
-
+        public ActionResult CreateMap()
+        {
+            return View();
+        }
 
     }
 }
