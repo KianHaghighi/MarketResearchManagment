@@ -66,6 +66,21 @@ namespace MarketResearchManagment.Controllers
         {
             return View();
         }
+        // Action to handle form submission
+        [HttpPost]
+        public IActionResult CreateMap(MarketMapCreateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Process the data (e.g., save to database)
+
+                // Redirect to another page (e.g., the index view)
+                return RedirectToAction("Index");
+            }
+
+            // If we got this far, something failed; redisplay the form
+            return View(model);
+        }
 
     }
 }
