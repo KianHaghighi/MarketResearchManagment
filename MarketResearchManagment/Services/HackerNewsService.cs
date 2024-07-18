@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 using MarketResearchManagment.Models;
 
+namespace MarketResearchManagment.Services;
+
 public class HackerNewsService
 {
     private readonly HttpClient _httpClient;

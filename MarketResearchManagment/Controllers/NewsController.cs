@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using MarketResearchManagment.Models;
 using Microsoft.AspNetCore.Mvc;
+using MarketResearchManagment.Services;
 
 namespace MarketResearchManagment.Controllers
 {
