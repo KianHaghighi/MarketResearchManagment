@@ -16,7 +16,6 @@ namespace MarketResearchManagment.Controllers
             //return View(companies);
             return View();
         }
-
     }
 }
 
