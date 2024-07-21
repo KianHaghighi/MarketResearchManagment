@@ -82,6 +82,10 @@ namespace MarketResearchManagment.Controllers
             return View(model);
         }
 
+        public ActionResult NewsFeed()
+        {
+            return View();
+        }
     }
 }
 
