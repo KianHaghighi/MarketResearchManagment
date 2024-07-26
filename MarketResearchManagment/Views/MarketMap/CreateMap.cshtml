@@ -20,6 +20,10 @@
     <div id="segmentNamesContainer" class="form-group">
         <!-- Segment name input fields will be added here -->
     </div>
+    <button type="button" id="finalizeSegments" class="btn btn-secondary">Finalize Segments</button>
+    <div id="segmentBoxesContainer" class="form-group">
+        <!-- Segment boxes with labels will be displayed here -->
+    </div>
     <div class="form-group">
         <label for="csvFile">CSV File</label>
         <input type="file" class="form-control" name="csvFile" accept=".csv" />
@@ -45,11 +49,29 @@
                 var input = document.createElement('input');
                 input.type = 'text';
                 input.name = 'SegmentNames[' + i + ']';
-                input.className = 'form-control';
+                input.className = 'form-control segment-name-input';
                 div.appendChild(input);
 
                 container.appendChild(div);
             }
         });
+
+        document.getElementById('finalizeSegments').addEventListener('click', function () {
+            var segmentNameInputs = document.querySelectorAll('.segment-name-input');
+            var container = document.getElementById('segmentBoxesContainer');
+            container.innerHTML = ''; // Clear previous segment boxes
+
+            segmentNameInputs.forEach(function (input, index) {
+                var div = document.createElement('div');
+                div.className = 'form-group';
+
+                var label = document.createElement('label');
+                label.textContent = input.value || 'Segment ' + (index + 1);
+                div.appendChild(label);
+
+                container.appendChild(div);
+            });
+        });
     </script>
 }
+
