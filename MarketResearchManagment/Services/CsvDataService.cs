@@ -11,13 +11,12 @@ public class CsvDataService
     {
         var Companys = new List<Company>();
 
-        using (var parser = new TextFieldParser(filePath))
+        using (var parser = new TextFieldParser(filePath)) 
         {
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
             parser.HasFieldsEnclosedInQuotes = true;
 
-            // Skip the header row if present
             if (!parser.EndOfData) parser.ReadLine();
 
             while (!parser.EndOfData)
